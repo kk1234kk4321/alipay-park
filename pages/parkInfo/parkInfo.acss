@@ -1,0 +1,34 @@
+.container {
+  flex: 1;
+  background: white;
+}
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #B9DFEB;  
+  width: 90%;
+  margin: 0 auto;
+  height: 34px;
+}
+
+.item-lab{
+  font-size:15px;
+  color:#72706B;
+  width: 60%;
+  padding-left:6%;
+}
+
+.item-descr{
+  text-align:right;
+  align-items: center;
+  font-size:17px;
+  width: 40%;
+  padding-right:6%;
+}

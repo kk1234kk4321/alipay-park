@@ -80,11 +80,20 @@ Page({
       url: '/pages/addCarNo/addCarNo'
     })
   },
+  //车位预约
   searchPark(e){
-
+    var plateNum = "carNo";
+    console.log("欢迎来到停车场搜索页面");
+    my.navigateTo({
+      url: '/pages/searchPark/searchPark?plateNum=' + plateNum
+    })
   },
+  //长期租位
   rentParkingplace(e){
-
+    console.log("欢迎进入长期租位页面");
+    my.navigateTo({
+      url: '/pages/rentParkingplace/rentParkingplace'
+    })
   },
   myinfo(e){
 

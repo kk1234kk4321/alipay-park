@@ -3,10 +3,13 @@
     "pages/index/index",
     "pages/addCarNo/addCarNo",
     "pages/parkManage/parkManage",
-    "pages/parkOwnerManage/parkOwnerManage"
+    "pages/parkOwnerManage/parkOwnerManage",
+    "pages/searchPark/searchPark",
+    "pages/parkInfo/parkInfo"
   ],
   "window": {
     "defaultTitle": "停车缴费",
-    "titleBarColor":"#00A7D7"
+    "titleBarColor":"#00A7D7",
+    "backgroundColor": "#FFFFFF"
   }
 }
