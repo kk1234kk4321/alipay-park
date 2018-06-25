@@ -1,0 +1,100 @@
+.container{
+    width: 100%
+}
+.lf{  
+    float: left;  
+}  
+.rt{  
+    float: right;  
+}  
+.tel{   
+    height: 36px;
+    margin: 10px auto 0 auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content:center;
+} 
+input {
+  border: 2px #00A6D6 solid;
+  border-radius: 4px;
+  height: 36px;
+  /* padding-left: 6px; */
+} 
+.chepai{  
+    height: 200rpx;  
+    line-height:200rpx;  
+}  
+.provinces{  
+    overflow: hidden;  
+    background-color: white;  
+    padding-left: 6px;
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    z-index: 10000;  
+}  
+.pro_li{  
+    font-size: 40rpx;  
+    height: 65rpx;  
+    width: 65rpx;  
+    line-height: 65rpx;  
+    text-align: center;  
+    border: 2rpx solid #ddd;  
+    margin: 5rpx;  
+    background-color:#BEE6F2; 
+    color:#00A7D6;  
+}  
+.pro_close{  
+    width: 100rpx;  
+    height: 70rpx;  
+    line-height: 70rpx;  
+    font-size: 40rpx;  
+    text-align: center;  
+    background-color: #00A6D6;  
+    border: 2rpx solid #ddd;  
+    margin: 5rpx ;  
+    color:white;
+}  
+.pro_del{  
+    width: 100rpx;  
+    height: 70rpx;  
+    line-height: 70rpx;  
+    font-size: 32rpx;  
+    text-align: center;  
+    background-color: #00A6D6;  
+    border: 2rpx solid #ddd;  
+    margin: 5rpx;  
+    color:white;
+}  
+.keyNums{  
+    overflow: hidden;  
+    background-color: white;  
+    padding-left: 6px;
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    z-index: 10000;  
+}  
+.pro_ok{  
+    width: 100rpx;  
+    height: 70rpx;  
+    line-height: 70rpx;  
+    font-size: 40rpx;  
+    text-align: center;  
+    background-color: #00A6D6;  
+    border: 2rpx solid #ddd;  
+    margin: 5rpx ;  
+    color:white;
+    /* margin-left: 35%; */  
+}  
+.pro_d{  
+    width: 100rpx;  
+    height: 70rpx;  
+    line-height: 70rpx;  
+    font-size: 40rpx;  
+    text-align: center;  
+    background-color: #00A6D6;  
+    border: 2rpx solid #ddd;  
+    margin: 5rpx;
+    color:white;  
+}
