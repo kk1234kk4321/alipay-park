@@ -65,8 +65,9 @@
 .others {
   width: 33.3%;
   float: left;
-  text-align: center;
+  text-align: left;
   background: white;
+  margin-left:5px;
 }
 
 /* .container-bottom {

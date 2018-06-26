@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/addCarNo/addCarNo",
     "pages/parkManage/parkManage",
-    "pages/parkOwnerManage/parkOwnerManage"
+    "pages/parkOwnerManage/parkOwnerManage",
+    "pages/updateFeeInfo/updateFeeInfo",
+    "pages/auditInfo/auditInfo",
+    "pages/parkingManage/parkingManage"
   ],
   "window": {
     "defaultTitle": "停车缴费",
