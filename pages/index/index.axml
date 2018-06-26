@@ -5,7 +5,7 @@
   </view>
   <view class="container-item" a:if="{{array!=null&&array.length>0}}">
     <view class="item" a:for="{{array}}" a:for-index="idx" a:for-item="item">
-      <view style="font-size:16px;color:#000;text-align:center;width:100%;" bindtap="payFeets" data-plate-num="{{item.carNo}}">{{item.carNo}}</view>
+      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="payFeets" data-car-no="{{item.carNo}}">{{item.carNo}}</view>
     </view>
   </view>
   <view class="container-add" onTap="addCarNo">

@@ -71,8 +71,7 @@ Page({
         "content-type": 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log("调用修改计费规则接口成功")
-        console.log("array====>", res)
+        console.log("调用修改计费规则接口成功", res)
         my.navigateTo({
           url: '/pages/index/index',
           success: function (res) {

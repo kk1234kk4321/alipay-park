@@ -75,6 +75,7 @@ Page({
       }
     }
   },
+  //车牌号绑定
   addCarNo(e){
     my.navigateTo({
       url: '/pages/addCarNo/addCarNo'
@@ -98,9 +99,18 @@ Page({
   myinfo(e){
 
   },
+  //停车管理
   parkManage(e){
     my.navigateTo({
       url: '/pages/parkManage/parkManage'
+    })
+  },
+  //当前停车收费管理
+  payFeets(e){
+    var carNo = e.currentTarget.dataset.carNo;
+    console.log('当前车牌号为', carNo);
+    my.navigateTo({
+      url: '/pages/payFeets/payFeets?carNo=' + carNo
     })
   }
 

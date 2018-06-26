@@ -8,7 +8,8 @@
     "pages/auditInfo/auditInfo",
     "pages/parkingManage/parkingManage",
     "pages/searchPark/searchPark",
-    "pages/parkInfo/parkInfo"
+    "pages/parkInfo/parkInfo",
+    "pages/payFeets/payFeets"
   ],
   "window": {
     "defaultTitle": "停车缴费",
