@@ -1,0 +1,43 @@
+/* pages/searchPark/searchPark.wxss */
+.container {
+    flex: 1;
+    background: white;
+}
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+}
+.search {
+    width: 86%;
+    height: 36px;
+    margin: 0 auto;
+    border: 2px #28A7C5 solid;
+    border-radius: 4px;
+}
+.search-input {
+   width: 86%;
+   float: left;
+   height: 36px;
+}
+.icon-sousuo4 {
+  width: 14%;
+  float: right;
+  height: 36px;
+  line-height: 36px;
+  color:#28A7C5;
+  text-align: center;
+}
+
+.item {
+  background-color: #B9DFEB;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

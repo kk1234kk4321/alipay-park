@@ -6,10 +6,13 @@
     "pages/parkOwnerManage/parkOwnerManage",
     "pages/updateFeeInfo/updateFeeInfo",
     "pages/auditInfo/auditInfo",
-    "pages/parkingManage/parkingManage"
+    "pages/parkingManage/parkingManage",
+    "pages/searchPark/searchPark",
+    "pages/parkInfo/parkInfo"
   ],
   "window": {
     "defaultTitle": "停车缴费",
-    "titleBarColor":"#00A7D7"
+    "titleBarColor":"#00A7D7",
+    "backgroundColor": "#FFFFFF"
   }
 }
