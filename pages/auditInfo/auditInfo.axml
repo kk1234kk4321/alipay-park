@@ -1,0 +1,40 @@
+<view class="container">
+  <view a:if="{{array!=''}}">
+    <view class="container-item">
+      <view class="item" a:for="{{array}}" a:for-index="idx" a:for-item="item">
+        <view class="item-lab" style="padding-left:3%;">{{item.carNo}}</view>
+        <view class="item-descr" a:if="{{item.status==2}}">
+          <view class="item-button" >
+            <button size="mini"  style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#AAAAAA;color:white;" >通过
+            </button>
+          </view>
+          <view class="item-button" >
+            <button size="mini"  onTap="goAudit" style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#00A7D7;color:white;" data-status="{{3}}" data-id="{{item.id}}" data-park-id="{{item.parkId}}" data-car-no="{{item.carNo}}" >不通过
+            </button>
+          </view>
+        </view>
+        <view class="item-descr" a:elif="{{item.status==3}}">
+          <view class="item-button">
+            <button size="mini"  onTap="goAudit" style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#00A7D7;color:white;" data-status="{{2}}" data-id="{{item.id}}" data-park-id="{{item.parkId}}" data-car-no="{{item.carNo}}" >通过
+            </button>
+          </view>
+          <view class="item-button">
+            <button size="mini" style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#AAAAAA;color:white;" >不通过
+            </button>
+          </view>
+        </view>
+        <view class="item-descr" a:else>
+          <view class="item-button">
+            <button size="mini"  onTap="goAudit" style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#00A7D7;color:white;" data-status="{{2}}" data-id="{{item.id}}" data-park-id="{{item.parkId}}" data-car-no="{{item.carNo}}" >通过
+            </button>
+          </view>
+          <view class="item-button">
+            <button size="mini"  onTap="goAudit" style="width:120px;height:40px;line-height:40px;font-size:17px;background-color:#00A7D7;color:white;" data-status="{{3}}" data-id="{{item.id}}" data-park-id="{{item.parkId}}" data-car-no="{{item.carNo}}" >不通过
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+  <view style='margin:40px 20px 5px 80px;color:#888888;' a:else>您当前还没有审核信息</view>
+</view>

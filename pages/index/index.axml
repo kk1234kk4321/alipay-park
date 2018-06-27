@@ -5,7 +5,7 @@
   </view>
   <view class="container-item" a:if="{{array!=null&&array.length>0}}">
     <view class="item" a:for="{{array}}" a:for-index="idx" a:for-item="item">
-      <view style="font-size:16px;color:#000;text-align:center;width:100%;" bindtap="payFeets" data-plate-num="{{item.carNo}}">{{item.carNo}}</view>
+      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="payFeets" data-car-no="{{item.carNo}}">{{item.carNo}}</view>
     </view>
   </view>
   <view class="container-add" onTap="addCarNo">
@@ -14,7 +14,6 @@
   <view style="text-align:right;padding-right:20px;color:#807D78;">添加新车牌</view>
   <view class="container-others">
      <view class="others"><image src="../../img/cwyy.png" onTap="searchPark"></image></view> 
-    <!-- <view class="others"><image src="../../img/cwyy.png"></image></view>  -->
     <view class="others"><image src="../../img/tcyh.png"></image></view>
     <view class="others"><image src="../../img/cqzw.png" onTap="rentParkingplace"></image></view>
     <view class="others"><image src="../../img/wdzy.png" onTap="myinfo"></image></view>

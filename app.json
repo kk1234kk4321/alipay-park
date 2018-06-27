@@ -4,13 +4,17 @@
     "pages/addCarNo/addCarNo",
     "pages/parkManage/parkManage",
     "pages/parkOwnerManage/parkOwnerManage",
+    "pages/updateFeeInfo/updateFeeInfo",
+    "pages/auditInfo/auditInfo",
+    "pages/parkingManage/parkingManage",
     "pages/searchPark/searchPark",
     "pages/parkInfo/parkInfo",
     "pages/rentParkingplace/rentParkingplace",
     "pages/myInfo/myInfo",
     "pages/setNickname/setNickname",
     "pages/memberDeals/memberDeals",
-    "pages/applyCar/applyCar"
+    "pages/applyCar/applyCar",
+    "pages/payFeets/payFeets"
   ],
   "window": {
     "defaultTitle": "停车缴费",

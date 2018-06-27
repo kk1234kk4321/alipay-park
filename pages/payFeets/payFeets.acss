@@ -19,27 +19,10 @@
 }
 
 .plateNum-item{
-  font-size:16px;
   margin-top:3px;
   padding-bottom:3px;
   display: flex;
   flex-direction: row;
-  width:94%;
-  margin:0 auto;
-  height:40px;
-  line-height:40px;
-}
-
-.other-item{
-  margin-top:3px;
-  padding-bottom:3px;
-  display: flex;
-  flex-direction: row;
-  width:94%;
-  margin:0 auto;
-  height:25px;
-  line-height: 15px;
-  align-items: center;
 }
 
 .plateNum-text{
@@ -61,16 +44,16 @@
 .item-lab{
   font-size:15px;
   color:#86837E;
-  width: 60%;
+  width: 30%;
   padding-left:6%;
   /* padding-left: 20px; */
 }
 
 .item-descr{
-  text-align:left;
+  text-align:right;
   align-items: center;
-  font-size:15px;
-  width: 40%;
+  font-size:17px;
+  width: 70%;
   padding-right:6%;
   /* padding-right: 20px; */
 }
@@ -80,35 +63,22 @@
   display: flex;
   flex-direction: row;
   position:fixed; 
+  bottom:60px;  
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px #BEE6F2 solid;
+  border-bottom: 1px #BEE6F2 solid;
+}
+
+.container-other{
+  background-color:white;
+  display: flex;
+  flex-direction: row;
+  position:fixed; 
   bottom:0px;  
   width: 100%;
   height: 50px;
   line-height: 50px;
   border-top: 1px #BEE6F2 solid;
-}
-
-.input{
-  text-align:center;
-  font-size:16px;
-  height:18px;
-  line-height: 18px;
-  justify-content:center;
-}
-
-.inputView{
-    border:  1px solid #00A7D7;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width:60px;
-    height:28px;
-  }
-  
-.button{
-  width:100%;
-  height:50px;
-  line-height:50px;
-  font-size:17px;
-  background-color:#BEE6F2;
-  color:#00A7D6;
-  border-radius:0px;
 }
