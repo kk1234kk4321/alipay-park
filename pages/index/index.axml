@@ -17,7 +17,6 @@
     <view class="others"><image src="../../img/tcyh.png"></image></view>
     <view class="others"><image src="../../img/cqzw.png" onTap="rentParkingplace"></image></view>
     <view class="others"><image src="../../img/wdzy.png" onTap="myinfo"></image></view>
-    
   </view>
   <view class="container-others" style="padding-bottom:60px;">
     <view class="others" a:if="{{authorty==1||authorty==2}}">

@@ -10,7 +10,13 @@
     "pages/searchPark/searchPark",
     "pages/parkInfo/parkInfo",
     "pages/payFeets/payFeets",
-    "pages/paymentInfo/paymentInfo"
+    "pages/paymentInfo/paymentInfo",
+    "pages/rentParkingplace/rentParkingplace",
+    "pages/myInfo/myInfo",
+    "pages/setNickname/setNickname",
+    "pages/memberDeals/memberDeals",
+    "pages/applyCar/applyCar",
+    "pages/payFeets/payFeets"
   ],
   "window": {
     "defaultTitle": "停车缴费",

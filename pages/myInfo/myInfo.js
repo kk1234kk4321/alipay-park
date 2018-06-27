@@ -1,11 +1,33 @@
-const app = getApp();
-
+// pages/myInfo/myInfo.js
+const app = getApp()
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    array: {},
-    authorty:app.globalData.authorty
+    userid: app.globalData.userid,
+    nickname: '',
+    mes: ''
   },
-  onLoad() {
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      userid: app.globalData.userid
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    // my.setNavigationBarTitle({
+    //   title: '个人主页',
+    // })
+
     console.log("app.globalData.userid===>",app.globalData.userid)
     var that = this;
     if(app.globalData.userid){
@@ -51,70 +73,21 @@ Page({
       success: function (res) {
         console.log("调用获取车牌号列表接口成功：",JSON.parse(res.data))
         var res = JSON.parse(res.data)
-        that.getAuthorty(res.data.authorities);
 
         that.setData({
-          array: res.data.list,
-          authorty: app.globalData.authorty
+          nickname: res.data.nickname
         })
       }
     })
   },
-  getAuthorty(array) {
-    if(array!=null&&array.length>0){
-      for (var i = 0; i < array.length; i++) {
-        console.log("array[i].authorty==", array[i].authorty);
-        if (array[i].authorty == "ROLE_PARK_OWNER") {
-          app.globalData.authorty = 1;
-          break;
-        } else if (array[i].authorty == "ROLE_PARK_STAFF"){
-          app.globalData.authorty = 2;
-        }else{
-          app.globalData.authorty = 0;
-        }
-      }
-    }
-  },
-  //车牌号绑定
-  addCarNo(e){
+
+  /**
+   * 设置昵称
+   */
+  setNickname: function(e) {
+    console.log("进入设置昵称页面！");
     my.navigateTo({
-      url: '/pages/addCarNo/addCarNo'
-    })
-  },
-  //车位预约
-  searchPark(e){
-    var plateNum = "carNo";
-    console.log("欢迎来到停车场搜索页面");
-    my.navigateTo({
-      url: '/pages/searchPark/searchPark?plateNum=' + plateNum
-    })
-  },
-  //长期租位
-  rentParkingplace(e){
-    console.log("欢迎进入长期租位页面");
-    my.navigateTo({
-      url: '/pages/rentParkingplace/rentParkingplace'
-    })
-  },
-  //我的主页
-  myinfo(e){
-    my.navigateTo({
-      url: '/pages/myInfo/myInfo'
-    })
-  },
-  //停车管理
-  parkManage(e){
-    my.navigateTo({
-      url: '/pages/parkManage/parkManage'
-    })
-  },
-  //当前停车收费管理
-  payFeets(e){
-    var carNo = e.currentTarget.dataset.carNo;
-    console.log('当前车牌号为', carNo);
-    my.navigateTo({
-      url: '/pages/payFeets/payFeets?carNo=' + carNo
+      url: '/pages/setNickname/setNickname'
     })
   }
-
-});
+})
