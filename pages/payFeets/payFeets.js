@@ -26,7 +26,7 @@ Page({
         console.log("调用在线缴费信息接口成功")
         var res = JSON.parse(res.data)
         console.log(res.data)
-        if (typeof(res.data)!='undefined') {
+        if (res.data) {
           that.setData({
             feetsData: res.data
           })
@@ -41,6 +41,7 @@ Page({
       },
     }); 
   },
+  //解除绑定
   deleteCar(e){
     var that = this
     var carno = that.data.carNo
@@ -72,5 +73,13 @@ Page({
         })
       }
     }); 
-  }
+  },
+  //查看历史缴费记录
+  paymentInfo:function(e){
+    var carNo = e.currentTarget.dataset.carNo;
+    console.log('查看缴费记录，车牌号为', e.currentTarget.dataset);
+    my.navigateTo({
+      url: '/pages/paymentInfo/paymentInfo?carNo=' + carNo
+    })
+  },
 });

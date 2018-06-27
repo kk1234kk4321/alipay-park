@@ -84,8 +84,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("调用修改计费规则接口失败")
-        console.log("失败原因====>", res)
+        console.log("调用修改计费规则接口失败", res)
         my.showToast({
           content: '修改计费规则失败',
           type: 'fail',
