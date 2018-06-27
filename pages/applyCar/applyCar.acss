@@ -1,0 +1,15 @@
+/* pages/applyCar/applyCar.acss */
+.container {
+    flex: 1;
+    background: white;
+}
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  text-align: center;
+  color: #888888;
+  font-size: 15px;
+  justify-content: center;
+}

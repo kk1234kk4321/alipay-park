@@ -1,11 +1,19 @@
-const app = getApp();
+// pages/rentParkingplace/rentParkingplace.js
+const app = getApp()
 
 Page({
+
+  //页面的初始数据
   data: {
-    array: {},
-    authorty:app.globalData.authorty
+    plateNums: {},
   },
-  onLoad() {
+
+  //生命周期函数--监听页面加载
+  onLoad: function (options) {
+    // my.setNavigationBarTitle({
+    //   title: '选择车牌',
+    // }),
+
     console.log("app.globalData.userid===>",app.globalData.userid)
     var that = this;
     if(app.globalData.userid){
@@ -39,6 +47,8 @@ Page({
       })
     }
   },
+
+  //获取车牌
   getCarNoList(userid){
     console.log("调用获取车牌号列表接口:", userid);    
     var that = this;
@@ -51,60 +61,25 @@ Page({
       success: function (res) {
         console.log("调用获取车牌号列表接口成功：",JSON.parse(res.data))
         var res = JSON.parse(res.data)
-        that.getAuthorty(res.data.authorities);
 
         that.setData({
-          array: res.data.list,
-          authorty: app.globalData.authorty
+          plateNums: res.data.list
         })
       }
     })
   },
-  getAuthorty(array) {
-    if(array!=null&&array.length>0){
-      for (var i = 0; i < array.length; i++) {
-        console.log("array[i].authorty==", array[i].authorty);
-        if (array[i].authorty == "ROLE_PARK_OWNER") {
-          app.globalData.authorty = 1;
-          break;
-        } else if (array[i].authorty == "ROLE_PARK_STAFF"){
-          app.globalData.authorty = 2;
-        }else{
-          app.globalData.authorty = 0;
-        }
-      }
-    }
+
+  //生命周期函数--监听页面显示
+  onShow: function () {
+
   },
-  addCarNo(e){
-    my.navigateTo({
-      url: '/pages/addCarNo/addCarNo'
-    })
-  },
-  //车位预约
-  searchPark(e){
-    var plateNum = "carNo";
-    console.log("欢迎来到停车场搜索页面");
+
+  //选择park
+  selectPark: function(e) {
+    var plateNum = e.currentTarget.dataset.plateNum;
+    console.log("当前车牌号为", plateNum);
     my.navigateTo({
       url: '/pages/searchPark/searchPark?plateNum=' + plateNum
     })
-  },
-  //长期租位
-  rentParkingplace(e){
-    console.log("欢迎进入长期租位页面");
-    my.navigateTo({
-      url: '/pages/rentParkingplace/rentParkingplace'
-    })
-  },
-  //我的主页
-  myinfo(e){
-    my.navigateTo({
-      url: '/pages/myInfo/myInfo'
-    })
-  },
-  parkManage(e){
-    my.navigateTo({
-      url: '/pages/parkManage/parkManage'
-    })
   }
-
-});
+})

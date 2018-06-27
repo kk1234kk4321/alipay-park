@@ -5,7 +5,12 @@
     "pages/parkManage/parkManage",
     "pages/parkOwnerManage/parkOwnerManage",
     "pages/searchPark/searchPark",
-    "pages/parkInfo/parkInfo"
+    "pages/parkInfo/parkInfo",
+    "pages/rentParkingplace/rentParkingplace",
+    "pages/myInfo/myInfo",
+    "pages/setNickname/setNickname",
+    "pages/memberDeals/memberDeals",
+    "pages/applyCar/applyCar"
   ],
   "window": {
     "defaultTitle": "停车缴费",

@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="container-item">
+    <view class="item" a:for="{{plateNums}}" a:for-index="idx" a:for-item="item">
+      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="selectPark" data-plate-num="{{item.carNo}}">{{item.carNo}}</view>
+    </view>
+  </view>
+</view>

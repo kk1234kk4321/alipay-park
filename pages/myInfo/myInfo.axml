@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="container-item">
+    <view class="nickname-item" a:if="{{nickname == '' || nickname == null}}">
+      <view class="nickname-text" style="color:#716F6B;">您还没有昵称</view>
+      <view style="color:#00A7D6;" onTap="setNickname">设置昵称</view>
+    </view>
+    <view a:else>
+      <view class="showNickname">{{nickname}}</view>
+      <view class="tip">昵称不可再次修改</view>
+    </view>
+  </view>
+</view>
