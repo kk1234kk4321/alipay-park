@@ -1,5 +1,6 @@
 .container{
-    width: 100%
+    width: 100%;
+    background-color: #ffffff;
 }
 .lf{  
     float: left;  
@@ -26,50 +27,54 @@ input {
 }  
 .provinces{  
     overflow: hidden;  
-    background-color: white;  
-    padding-left: 6px;
-    position: absolute;  
+    background-color: #D5D4D4;  
+    /* padding-left: 6px; */
+    padding:30rpx 0 30rpx 6px;  
+    position: absolute; 
     bottom: 0;  
     left: 0;  
     z-index: 10000;  
 }  
 .pro_li{  
     font-size: 40rpx;  
-    height: 65rpx;  
+    height: 85rpx;  
     width: 65rpx;  
-    line-height: 65rpx;  
+    line-height: 85rpx;  
     text-align: center;  
-    border: 2rpx solid #ddd;  
+    border: 2rpx solid #ddd; 
+    border-radius: 6px; 
     margin: 5rpx;  
-    background-color:#BEE6F2; 
-    color:#00A7D6;  
+    background-color:#FFF; 
 }  
 .pro_close{  
     width: 100rpx;  
-    height: 70rpx;  
-    line-height: 70rpx;  
+    height: 85rpx;  
+    line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
     background-color: #00A6D6;  
     border: 2rpx solid #ddd;  
+    border-radius: 6px;
     margin: 5rpx ;  
     color:white;
 }  
 .pro_del{  
     width: 100rpx;  
-    height: 70rpx;  
-    line-height: 70rpx;  
+    height: 85rpx;  
+    line-height: 85rpx;  
     font-size: 32rpx;  
     text-align: center;  
     background-color: #00A6D6;  
     border: 2rpx solid #ddd;  
+    border-radius: 6px;
     margin: 5rpx;  
     color:white;
 }  
 .keyNums{  
     overflow: hidden;  
-    background-color: white;  
-    padding-left: 6px;
+    background-color: #D5D4D4;  
+    /* padding-left: 6px; */
+    padding: 30rpx 0 30rpx 6px;
     position: absolute;  
     bottom: 0;  
     left: 0;  
@@ -77,23 +82,25 @@ input {
 }  
 .pro_ok{  
     width: 100rpx;  
-    height: 70rpx;  
-    line-height: 70rpx;  
+    height: 85rpx;  
+    line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
     background-color: #00A6D6;  
     border: 2rpx solid #ddd;  
+    border-radius: 6px;
     margin: 5rpx ;  
     color:white;
     /* margin-left: 35%; */  
 }  
 .pro_d{  
     width: 100rpx;  
-    height: 70rpx;  
-    line-height: 70rpx;  
+    height: 85rpx;  
+    line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
     background-color: #00A6D6;  
+    border-radius: 6px;
     border: 2rpx solid #ddd;  
     margin: 5rpx;
     color:white;  

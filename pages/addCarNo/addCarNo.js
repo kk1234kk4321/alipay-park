@@ -180,6 +180,9 @@ Page({
     my.hideKeyboard();
   },
   onLoad: function() {
+    
+  },
+  onShow() {
     my.setNavigationBar({
      title:'车牌号绑定'
     });

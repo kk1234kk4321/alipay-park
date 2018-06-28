@@ -24,9 +24,6 @@ Page({
    */
   onLoad: function (res) {
     console.log("res====>", res);
-    // my.setNavigationBarTitle({
-    //   title: '长期租位'
-    // })
     var addColor = '#00A6D6';
     var minusColor = '#00A6D6';
     var startTime = new Date();
@@ -49,6 +46,10 @@ Page({
   },
   //生命周期函数 -- 监听页面显示
   onShow() {
+    my.setNavigationBar({
+      title: '长期租位'
+    })
+
     var that = this;
     var userid = app.globalData.userid;
     var carNo = that.data.carNo;
