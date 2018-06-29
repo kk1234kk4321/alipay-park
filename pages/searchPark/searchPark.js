@@ -19,10 +19,13 @@ Page({
     this.setData({
       plateNum: res.plateNum
     })
+  },
 
-    // my.setNavigationBarTitle({
-    //   title: '停车场搜索'
-    // })
+  //生命周期函数--监听页面显示
+  onShow() {   
+    my.setNavigationBar({
+      title: '停车场搜索'
+    })
   },
   
   //监听文本框输入

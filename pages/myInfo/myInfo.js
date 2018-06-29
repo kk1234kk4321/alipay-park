@@ -24,9 +24,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // my.setNavigationBarTitle({
-    //   title: '个人主页',
-    // })
+    my.setNavigationBar({
+      title: '个人主页',
+    })
 
     console.log("app.globalData.userid===>",app.globalData.userid)
     var that = this;

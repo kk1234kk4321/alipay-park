@@ -21,9 +21,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // my.setNavigationBarTitle({
-    //   title: '设置昵称',
-    // });
+    my.setNavigationBar({
+      title: '设置昵称',
+    });
   },
 
   /**

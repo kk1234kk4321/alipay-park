@@ -10,10 +10,6 @@ Page({
 
   //生命周期函数--监听页面加载
   onLoad: function (options) {
-    // my.setNavigationBarTitle({
-    //   title: '选择车牌',
-    // }),
-
     console.log("app.globalData.userid===>",app.globalData.userid)
     var that = this;
     if(app.globalData.userid){
@@ -71,7 +67,9 @@ Page({
 
   //生命周期函数--监听页面显示
   onShow: function () {
-
+    my.setNavigationBar({
+      title: '选择车牌',
+    })
   },
 
   //选择park

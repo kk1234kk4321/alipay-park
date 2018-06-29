@@ -12,13 +12,14 @@ Page({
     this.setData({
       parkName: res.parkName
     })
-    // my.setNavigationBarTitle({
-    //   title: '停车场详情',
-    // })
   },
 
   //生命周期函数--监听页面显示
   onShow() {
+    my.setNavigationBar({
+      title: '停车场详情',
+    })
+
     var that = this
     var parkName = that.data.parkName
     console.log("车位情况====>")

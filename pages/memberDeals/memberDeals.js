@@ -24,9 +24,6 @@ Page({
    */
   onLoad: function (res) {
     console.log("res====>", res);
-    // my.setNavigationBarTitle({
-    //   title: '长期租位'
-    // })
     var addColor = '#00A6D6';
     var minusColor = '#00A6D6';
     var startTime = new Date();
@@ -49,6 +46,10 @@ Page({
   },
   //生命周期函数 -- 监听页面显示
   onShow() {
+    my.setNavigationBar({
+      title: '长期租位'
+    })
+
     var that = this;
     var userid = app.globalData.userid;
     var carNo = that.data.carNo;
@@ -213,6 +214,7 @@ Page({
     var userid = app.globalData.userid; 
     var carNo = e.currentTarget.dataset.carNo;
     var parkNo = e.currentTarget.dataset.parkNo;
+    var price = e.currentTarget.dataset.price;
     console.log("userid", userid);
     console.log("车牌：", carNo);
     console.log("停车场编号：", parkNo);
@@ -230,7 +232,7 @@ Page({
         console.log("applyCar====>", res.data.data);
 
         my.navigateTo({
-          url: '/pages/applyCar/applyCar'
+          url: '/pages/applyCar/applyCar?price=' + price + '&carNo=' + carNo + "&parkNo=" + parkNo
         })
       }
     })
