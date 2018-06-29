@@ -140,17 +140,69 @@ Page({
         }
       })
     } 
-  },
+  },//支付
   formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e);
+    var fee = e.detail.value.dealsFee;
+    var count = e.detail.value.count;
+    var price = this.data.price;
+    var carNo = this.data.carNo;
+    var parkNo = this.data.parkNo;
     
+    my.httpRequest({  
+      url: app.globalData.url+'/alipay/pay/fee/'+fee,
+      data: {},
+      method: 'GET',
+      headers: { "content-type": 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log("调用支付接口成功", res.data)
+        var res = res.data
+        my.tradePay({
+          orderStr: res.orderStr,  // 即上述服务端已经加签的orderSr参数
+          success: (res) => {
+            my.alert(res.resultCode);
+            //that.updateStatus(tradeNo, fee, recordId, originFee);
+          },
+        });
+        
+      },
+      fail: function (res) {
+        console.log("调用支付接口失败", res)
+        
+      }
+    }); 
   },
-  /**生成商户订单 */
-  generateOrder: function (openId, fee, carNo, parkNo, count, price) {
-    
-  },
-  /* 支付   */
-  pay: function (param, carNo, parkNo, openId, count, fee, price) {
-    
+  //修改支付状态
+  updateStatus(tradeNo,fee,carNo,parkNo,count,price){
+    my.httpRequest({  
+      url: app.globalData.url+'/alipay/membersPay/userid/'+app.globalData.userid+
+        '/tradeNo/'+tradeNo+'/fee/'+fee+'/carNo/'+carNo+'/parkNo/'+parkNo+'/count/'+count+'/price/'+price,
+      data: {},
+      method: 'GET',
+      dataType: 'text',
+      headers: { "content-type": 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log("调用更新支付状态接口成功", res)
+        my.navigateTo({
+          url: '/pages/index/index',
+          success: function (res) {
+            my.showToast({
+              content: '支付成功',
+              type: 'success',
+              duration: 2000
+            })
+          }
+        })
+      },
+      fail: function (res) {
+        console.log("调用更新支付状态接口失败", res)
+        my.showToast({
+          content: '支付失败',
+          type: 'fail',
+          duration: 2000
+        })
+      }
+    }); 
   },
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)

@@ -1,10 +1,10 @@
 <view class="container">
-  <view class="container-item">
+  <view a:if="{{paymentInfo!=''}}">
+    <view class="container-item">
     <view class="plateNum-item" style='background:#BEE6F2;height:50px;line-height:54px;'>
       <view class="plateNum-text">{{carNo}}</view>
     </view>
   </view>
-  <view a:if="{{paymentInfo!=''}}">
       <view class="container-item" a:for="{{paymentInfo}}" a:for-index="idx" a:for-item="info">
         <view class="item" style="border-bottom: 1px #BEE6F2 solid;">
           <view class="item-lab">停车场</view>

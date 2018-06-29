@@ -17,7 +17,7 @@ Page({
     var that = this
     var parkNo = that.data.parkNo
     my.httpRequest({
-      url: app.globalData.url + '/park/applyCarList/parkNo/' + parkNo,
+      url: app.globalData.url + '/zfb/applyCarList/parkNo/' + parkNo+'/userid/'+app.globalData.userid,
       method: 'GET',
       dataType: 'text',
       headers: { "content-type": 'application/x-www-form-urlencoded' },
@@ -59,7 +59,7 @@ Page({
       success: function (res) {
         console.log("调用白名单审核接口成功")
         console.log(res)
-        my.navigateTo({
+        my.redirectTo({
           url: '/pages/auditInfo/auditInfo?parkNo=' + that.data.parkNo,
           success: function (res) {
             my.showToast({

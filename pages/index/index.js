@@ -51,7 +51,10 @@ Page({
       success: function (res) {
         console.log("调用获取车牌号列表接口成功：",JSON.parse(res.data))
         var res = JSON.parse(res.data)
-        that.getAuthorty(res.data.authorities);
+
+        if(res.data.authorities){
+          that.getAuthorty(res.data.authorities);
+        }
 
         that.setData({
           array: res.data.list,
@@ -64,7 +67,7 @@ Page({
     if(array!=null&&array.length>0){
       for (var i = 0; i < array.length; i++) {
         console.log("array[i].authorty==", array[i].authorty);
-        if (array[i].authorty == "ROLE_PARK_OWNER") {
+        if (array[i].authorty == "ROLE_PARK_ADMIN") {
           app.globalData.authorty = 1;
           break;
         } else if (array[i].authorty == "ROLE_PARK_STAFF"){
