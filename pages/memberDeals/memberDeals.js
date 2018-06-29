@@ -179,7 +179,7 @@ Page({
         console.log("applyCar====>", res.data.data);
 
         my.navigateTo({
-          url: '/pages/applyCar/applyCar'
+          url: '/pages/applyCar/applyCar?carNo=' + carNo + "&parkNo=" + parkNo
         })
       }
     })
