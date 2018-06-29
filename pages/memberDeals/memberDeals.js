@@ -162,6 +162,7 @@ Page({
     var userid = app.globalData.userid; 
     var carNo = e.currentTarget.dataset.carNo;
     var parkNo = e.currentTarget.dataset.parkNo;
+    var price = e.currentTarget.dataset.price;
     console.log("userid", userid);
     console.log("车牌：", carNo);
     console.log("停车场编号：", parkNo);
@@ -179,7 +180,7 @@ Page({
         console.log("applyCar====>", res.data.data);
 
         my.navigateTo({
-          url: '/pages/applyCar/applyCar?carNo=' + carNo + "&parkNo=" + parkNo
+          url: '/pages/applyCar/applyCar?price=' + price + '&carNo=' + carNo + "&parkNo=" + parkNo
         })
       }
     })
