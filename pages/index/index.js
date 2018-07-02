@@ -52,7 +52,7 @@ Page({
         console.log("调用获取车牌号列表接口成功：",JSON.parse(res.data))
         var res = JSON.parse(res.data)
 
-        if(res.data.authorities){
+        if(typeof(res.data.authorities)!=undefined){
           that.getAuthorty(res.data.authorities);
         }
 

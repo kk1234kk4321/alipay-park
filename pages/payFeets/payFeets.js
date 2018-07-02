@@ -85,19 +85,21 @@ Page({
   goPay(e){
     var that = this;
     var fee = e.currentTarget.dataset.fee;
+    var recordId = e.currentTarget.dataset.recordId;
+    var originFee = e.currentTarget.dataset.originFee;
     my.httpRequest({  
       url: app.globalData.url+'/alipay/pay/fee/'+fee,
       data: {},
       method: 'GET',
       headers: { "content-type": 'application/x-www-form-urlencoded' },
       success: function (res) {
-        console.log("调用支付接口成功", res.data)
-        var res = res.data
+        console.log("调用支付接口成功", res.data.data)
+        var tradeNo = res.data.data.tradeno
+        //that.updateStatus(tradeNo, fee, recordId, originFee);
         my.tradePay({
-          orderStr: res.orderStr,  // 即上述服务端已经加签的orderSr参数
+          orderStr: res.data.data.orderStr,  // 即上述服务端已经加签的orderSr参数
           success: (res) => {
-            my.alert(res.resultCode);
-            //that.updateStatus(tradeNo, fee, recordId, originFee);
+            that.updateStatus(tradeNo, fee, recordId, originFee);
           },
         });
         

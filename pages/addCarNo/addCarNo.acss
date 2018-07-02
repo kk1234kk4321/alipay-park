@@ -45,30 +45,34 @@ input {
     border-radius: 6px; 
     margin: 5rpx;  
     background-color:#FFF; 
-}  
+} 
+
+.pro_li_view{
+  padding-left:20px;
+  padding-right:20px;
+}
+
 .pro_close{  
     width: 100rpx;  
     height: 85rpx;  
     line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
-    background-color: #00A6D6;  
+    background-color: #FFF;  
     border: 2rpx solid #ddd;  
     border-radius: 6px;
-    margin: 5rpx ;  
-    color:white;
+    margin: 5rpx ; 
 }  
 .pro_del{  
-    width: 100rpx;  
+    width: 120rpx;  
     height: 85rpx;  
     line-height: 85rpx;  
     font-size: 32rpx;  
     text-align: center;  
-    background-color: #00A6D6;  
+    background-color: #FFF;  
     border: 2rpx solid #ddd;  
     border-radius: 6px;
     margin: 5rpx;  
-    color:white;
 }  
 .keyNums{  
     overflow: hidden;  
@@ -81,16 +85,15 @@ input {
     z-index: 10000;  
 }  
 .pro_ok{  
-    width: 100rpx;  
+    width: 110rpx;  
     height: 85rpx;  
     line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
-    background-color: #00A6D6;  
+    background-color: #FFF;  
     border: 2rpx solid #ddd;  
     border-radius: 6px;
-    margin: 5rpx ;  
-    color:white;
+    margin: 5rpx ; 
     /* margin-left: 35%; */  
 }  
 .pro_d{  
@@ -99,9 +102,8 @@ input {
     line-height: 85rpx;  
     font-size: 40rpx;  
     text-align: center;  
-    background-color: #00A6D6;  
+    background-color: #FFF;  
     border-radius: 6px;
     border: 2rpx solid #ddd;  
     margin: 5rpx;
-    color:white;  
 }

@@ -144,6 +144,7 @@ Page({
   },//支付
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e);
+    var that = this;
     var fee = e.detail.value.dealsFee;
     var count = e.detail.value.count;
     var price = this.data.price;
@@ -156,13 +157,14 @@ Page({
       method: 'GET',
       headers: { "content-type": 'application/x-www-form-urlencoded' },
       success: function (res) {
-        console.log("调用支付接口成功", res.data)
-        var res = res.data
+        console.log("调用支付接口成功", res.data.data)
+        var tradeNo = res.data.data.tradeno;
+        //that.updateStatus(tradeNo,fee,carNo,parkNo,count,price)
         my.tradePay({
-          orderStr: res.orderStr,  // 即上述服务端已经加签的orderSr参数
+          orderStr: res.data.data.orderStr,  // 即上述服务端已经加签的orderSr参数
           success: (res) => {
-            my.alert(res.resultCode);
-            //that.updateStatus(tradeNo, fee, recordId, originFee);
+            var tradeNo = res.data.data.tradeno;
+            that.updateStatus(tradeNo,fee,carNo,parkNo,count,price)
           },
         });
         
@@ -175,12 +177,13 @@ Page({
   },
   //修改支付状态
   updateStatus(tradeNo,fee,carNo,parkNo,count,price){
+    console.log("修改支付状态=========")
     my.httpRequest({  
       url: app.globalData.url+'/alipay/membersPay/userid/'+app.globalData.userid+
-        '/tradeNo/'+tradeNo+'/fee/'+fee+'/carNo/'+carNo+'/parkNo/'+parkNo+'/count/'+count+'/price/'+price,
+        '/tradeNo/'+tradeNo+'/fee/'+fee+'/carNo/'+encodeURI(carNo)+'/parkNo/'+encodeURI(parkNo)+
+        '/count/'+count+'/price/'+price,
       data: {},
       method: 'GET',
-      dataType: 'text',
       headers: { "content-type": 'application/x-www-form-urlencoded' },
       success: function (res) {
         console.log("调用更新支付状态接口成功", res)
