@@ -2,7 +2,5 @@
   <view class="container-item">
     您已申请通行证，需要审核？请耐心等候...
   </view>
-  <view class="container-item" style="height:40px;line-height:40px;background:#BEE6F2;color:#00A8D5;" onTap="return">
-    返回
-  </view>
+  <view class="pos-fixed" onTap="return">返回</view>
 </view>

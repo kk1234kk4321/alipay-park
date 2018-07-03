@@ -13,3 +13,16 @@
   font-size: 15px;
   justify-content: center;
 }
+
+.pos-fixed {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #BEE6F2;
+  color: #00A8D5;
+  justify-content: center;
+}

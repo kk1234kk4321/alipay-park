@@ -77,5 +77,14 @@ Page({
         mes: '请设置您的昵称！'
       })
     }
+  },
+
+  /**
+   * 返回
+   */
+  return: function(e) {
+    my.navigateTo({
+      url: '/pages/index/index'
+    })
   }
 })
