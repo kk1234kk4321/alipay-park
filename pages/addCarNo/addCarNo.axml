@@ -12,7 +12,7 @@
     <view class="pro_li lf" a:for="{{item11}}" onTap='sheng' data-sh="{{item}}">{{item}}</view>
     <view class="pro_li_view"><view class="pro_li lf" a:for="{{item12}}" onTap='sheng' data-sh="{{item}}">{{item}}</view></view>
     <view class="pro_li_view"><view class="pro_li_view"><view class="pro_li lf" a:for="{{item13}}" onTap='sheng' data-sh="{{item}}">{{item}}</view></view></view>   
-    <view class="pro_close lf" bindtap='d2'>关闭</view>     
+    <view class="pro_close lf" onTap='d2'>关闭</view>     
   </view>  
   <!-- 号码  -->  
   <view class="keyNums" hidden='{{hidden2}}'>  
