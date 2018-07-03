@@ -22,7 +22,7 @@ Page({
       carNo = null;
     }
     my.httpRequest({  
-      url: app.globalData.url+'/park/parking/parkNo/' + parkNo+'/carNo/'+carNo,
+      url: app.globalData.url+'/park/parking/parkNo/' + parkNo+'/carNo/'+encodeURI(carNo),
       data: {},
       method: 'GET',
       dataType: 'text',
