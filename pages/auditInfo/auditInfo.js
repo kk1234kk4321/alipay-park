@@ -59,7 +59,7 @@ Page({
       success: function (res) {
         console.log("调用白名单审核接口成功")
         console.log(res)
-        my.redirectTo({
+        my.reLaunch({
           url: '/pages/auditInfo/auditInfo?parkNo=' + that.data.parkNo,
           success: function (res) {
             my.showToast({

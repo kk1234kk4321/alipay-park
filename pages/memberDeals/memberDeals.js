@@ -187,7 +187,7 @@ Page({
       headers: { "content-type": 'application/x-www-form-urlencoded' },
       success: function (res) {
         console.log("调用更新支付状态接口成功", res)
-        my.navigateTo({
+        my.reLaunch({
           url: '/pages/index/index',
           success: function (res) {
             my.showToast({

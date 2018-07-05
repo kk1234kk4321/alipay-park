@@ -142,7 +142,7 @@ Page({
         success: function (res) {
           console.log("调用绑定车牌号接口成功")
           console.log("res.data====>",res)
-          my.navigateTo({
+          my.reLaunch({
             url: '/pages/index/index',
             success: function (res) {
               my.showToast({
@@ -164,7 +164,7 @@ Page({
         }
       })
     }else{  
-      my.navigateTo({
+      my.reLaunch({
         url: '/pages/addCarNo/addCarNo',
         success: function (res) {
           my.showToast({

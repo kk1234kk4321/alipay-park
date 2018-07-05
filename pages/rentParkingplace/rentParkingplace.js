@@ -79,5 +79,10 @@ Page({
     my.navigateTo({
       url: '/pages/searchPark/searchPark?plateNum=' + plateNum
     })
+  },
+
+  //返回
+  reback(e){
+    my.reLaunch({url: '/pages/index/index'})
   }
 })
