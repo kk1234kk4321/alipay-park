@@ -83,8 +83,8 @@ Page({
    * 返回
    */
   return: function(e) {
-    my.navigateTo({
-      url: '/pages/index/index'
+    my.redirectTo({
+      url: '/pages/myInfo/myInfo'
     })
   }
 })

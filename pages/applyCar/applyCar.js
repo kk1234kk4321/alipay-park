@@ -32,7 +32,7 @@ Page({
     var parkNo = this.data.parkNo;
     var price = this.data.price;
 
-    my.navigateTo({
+    my.redirectTo({
       url: '/pages/memberDeals/memberDeals?price=' + price + '&carNo=' + carNo + '&parkNo=' + parkNo + '&currCount=0&currPrice=0',
     })
   }

@@ -86,7 +86,7 @@ Page({
    */
   setNickname: function(e) {
     console.log("进入设置昵称页面！");
-    my.navigateTo({
+    my.redirectTo({
       url: '/pages/setNickname/setNickname'
     })
   },
@@ -95,7 +95,7 @@ Page({
    * 返回
    */
   return: function(e) {
-    my.navigateTo({
+    my.reLaunch({
       url: '/pages/index/index'
     })
   }

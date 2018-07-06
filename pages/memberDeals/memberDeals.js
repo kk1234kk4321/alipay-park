@@ -234,7 +234,7 @@ Page({
         console.log("调用接口成功")
         console.log("applyCar====>", res.data.data);
 
-        my.navigateTo({
+        my.redirectTo({
           url: '/pages/applyCar/applyCar?price=' + price + '&carNo=' + carNo + "&parkNo=" + parkNo
         })
       }
