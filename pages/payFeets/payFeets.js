@@ -87,6 +87,7 @@ Page({
     var fee = e.currentTarget.dataset.fee;
     var recordId = e.currentTarget.dataset.recordId;
     var originFee = e.currentTarget.dataset.originFee;
+    var parkNo = e.currentTarget.dataset.parkNo;
     my.httpRequest({  
       url: app.globalData.url+'/alipay/pay/fee/'+fee,
       data: {},
@@ -95,11 +96,12 @@ Page({
       success: function (res) {
         console.log("调用支付接口成功", res.data.data)
         var tradeNo = res.data.data.tradeno
+        var carNo = that.data.carNo
         //that.updateStatus(tradeNo, fee, recordId, originFee);
         my.tradePay({
           orderStr: res.data.data.orderStr,  // 即上述服务端已经加签的orderSr参数
           success: (res) => {
-            that.updateStatus(tradeNo, fee, recordId, originFee);
+            that.updateStatus(tradeNo, fee, recordId, originFee,parkNo,carNo);
           },
         });
         
@@ -124,13 +126,16 @@ Page({
   goUpdate(e){
     var recordId = e.currentTarget.dataset.recordId; 
     var originFee = e.currentTarget.dataset.originFee;
-    this.updateStatus(0,0,recordId,originFee)
+    var parkNo = e.currentTarget.dataset.parkNo;
+    var carNo = this.data.carNo;
+    this.updateStatus(0,0,recordId,originFee,parkNo,carNo)
   },
   //更新支付状态
-  updateStatus: function (tradeNo, fee, recordId, originFee){
+  updateStatus: function (tradeNo, fee, recordId, originFee,parkNo,carNo){
     my.httpRequest({  
       url: app.globalData.url+'/alipay/parkPay/userid/'+app.globalData.userid+
-        '/tradeNo/'+tradeNo+'/fee/'+fee+'/recordId/'+recordId+'/originFee/'+originFee,
+        '/tradeNo/'+tradeNo+'/fee/'+fee+'/recordId/'+recordId+'/originFee/'+originFee+
+        '/parkNo/'+parkNo+'/carNo/'+ encodeURI(carNo),
       data: {},
       method: 'GET',
       dataType: 'text',

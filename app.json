@@ -16,7 +16,7 @@
     "pages/setNickname/setNickname",
     "pages/memberDeals/memberDeals",
     "pages/applyCar/applyCar",
-    "pages/payFeets/payFeets"
+    "pages/payFeeSum/payFeeSum"
   ],
   "window": {
     "defaultTitle": "停车缴费",

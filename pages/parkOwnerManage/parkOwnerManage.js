@@ -31,5 +31,11 @@ Page({
     my.navigateTo({
       url: '/pages/parkingManage/parkingManage?parkNo=' + this.data.parkNo
     })
+  },
+  payFeeSum(e){
+    console.log("准备进入收益统计页面===", this.data);
+    my.navigateTo({
+      url: '/pages/payFeeSum/payFeeSum?parkNo=' + this.data.parkNo
+    })
   }
 });
