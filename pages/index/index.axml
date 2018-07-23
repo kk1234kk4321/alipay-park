@@ -9,7 +9,8 @@
     </view>
   </view>
   <view class="container-add" onTap="addCarNo">
-    <view class="iconfont icon-jia" style="margin:0 auto;color:#4CBFE0;font-size:24px;"></view>
+    <view class="iconfont icon-jia" style="margin:0 auto;color:#4CBFE0;font-size:24px;width:70%;text-align:right;padding-right:25%"></view>
+    <view style="width:30%">添加车辆</view>
   </view>
   <!-- <view style="text-align:right;padding-right:20px;color:#807D78;">添加新车牌</view> -->
   <view class="container-others" style="padding-bottom:60px;">

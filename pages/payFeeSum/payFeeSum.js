@@ -37,4 +37,21 @@ Page({
       }
     })
   },
+  detailForPark(e){
+    console.log("准备进入在线收费明细页面",e)
+    var outTime = e.currentTarget.dataset.outTime
+    var parkNo = this.data.parkNo
+    my.navigateTo({
+      url: '/pages/payFeeDetail/payFeeDetail?parkNo=' + parkNo + '&outTime=' + outTime
+    })
+
+  },
+  detailForMember(e){
+    console.log("准备进入长期租位收费明细页面",e)
+    var payTime = e.currentTarget.dataset.payTime
+    var parkNo = this.data.parkNo
+    my.navigateTo({
+      url: '/pages/payFeeDetailForMember/payFeeDetailForMember?parkNo=' + parkNo + '&payTime=' + payTime
+    })
+  }
 })

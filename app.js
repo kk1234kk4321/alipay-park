@@ -33,7 +33,7 @@ App({
     authorty: 0,
     userid:"",
       url:'https://park.zhangyuanzhineng.com'
-    //url:'http://192.168.1.113:8080'
-    //url:'http://192.168.1.126:80'
+      // url:'http://192.168.1.113:8080'
+      //url:'http://192.168.1.126:80'
   }
 });
