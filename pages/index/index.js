@@ -72,7 +72,10 @@ Page({
           break;
         } else if (array[i].authorty == "ROLE_PARK_STAFF"){
           app.globalData.authorty = 2;
-        }else{
+        } else if(array[i].authorty == "ROLE_PARK_SELLER") {
+          app.globalData.authorty = 5;
+        }
+        else{
           app.globalData.authorty = 0;
         }
       }
@@ -118,6 +121,11 @@ Page({
     my.navigateTo({
       url: '/pages/payFeets/payFeets?carNo=' + carNo
     })
+  },
+  //商家管理
+  sellerManage(e) {
+    my.navigateTo({
+      url: '/pages/sellerManage/sellerManage'
+    })
   }
-
 });
