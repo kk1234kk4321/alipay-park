@@ -87,7 +87,8 @@ Page({
     console.log("userid：", userid)
     if(carNo==""||carNo==null) {//车牌号为空
       that.setData({
-        sellerDiscount: ''
+        sellerDiscount: {totalDiscount: '', remainDiscount: '', minutes: ''},
+        plateNum: 'plateNum'
       })
     } else {
       my.httpRequest({
