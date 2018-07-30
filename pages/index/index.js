@@ -46,11 +46,10 @@ Page({
       url: app.globalData.url+'/zfb/carNoList/userid/'+userid,
       data: {},
       method: 'GET',
-      dataType: 'text',
       headers: { 'Content-Type': 'application/json' },
       success: function (res) {
-        console.log("调用获取车牌号列表接口成功：",JSON.parse(res.data))
-        var res = JSON.parse(res.data)
+        console.log("调用获取车牌号列表接口成功：",res.data)
+        var res = res.data
 
         if(typeof(res.data.authorities)!=undefined){
           that.getAuthorty(res.data.authorities);
