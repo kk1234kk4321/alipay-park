@@ -79,7 +79,7 @@ Page({
     var that = this;
     console.log(e.currentTarget.dataset.ot);
     var carNo = that.data.carNo + e.currentTarget.dataset.ot;
-    if (carNo.length <= 7) {
+    if (carNo.length <= 8) {
       that.setData({
         carNo: carNo
       })
@@ -130,9 +130,40 @@ Page({
     //var plate = this.data.array[e.detail.value.plateNo];
     var carno = e;
     console.log('carno=', carno);
-    var express = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;
+    var express = /^^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1})$/;
     console.log('express===>', express.test(carno))
     if (carno.length == 7 && express.test(carno)){
+      my.httpRequest({
+        url: app.globalData.url+'/zfb/addCarNo/userid/'+userid+'/carno/'+encodeURI(carno),
+        data: {},
+        method: 'GET',
+        dataType: 'text',
+        headers: { "content-type": 'application/x-www-form-urlencoded' },
+        success: function (res) {
+          console.log("调用绑定车牌号接口成功")
+          console.log("res.data====>",res)
+          my.reLaunch({
+            url: '/pages/index/index',
+            success: function (res) {
+              my.showToast({
+                content: '绑定车牌号成功',
+                type: 'success',
+                duration: 2000
+              })
+            }
+          })
+        },
+        fail: function (res) {
+          console.log("调用绑定车牌号接口失败")
+          console.log(res.data)
+          my.showToast({
+            content: '绑定车牌号失败',
+            type: 'fail',
+            duration: 2000
+          })
+        }
+      })
+    }else  if (carno.length == 8 && express.test(carno)){
       my.httpRequest({
         url: app.globalData.url+'/zfb/addCarNo/userid/'+userid+'/carno/'+encodeURI(carno),
         data: {},
