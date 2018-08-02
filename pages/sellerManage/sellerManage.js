@@ -12,15 +12,15 @@ Page({
     var that = this
     var userid = app.globalData.userid
     my.httpRequest({
-      url: app.globalData.url + '/zfb/parkOwnerList/userid/' + userid,
+      url: app.globalData.url + '/zfb/seller/parkList/userid/' + userid,
       method: 'GET',
       data: {},
       header: {
         "content-type": 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log("调用车场管理接口成功")
-        console.log("array====>", res)
+        console.log("调用商家停车场管理接口成功")
+        console.log("parkList====>", res)
         if (res.data != '') {
           that.setData({
             array: res.data.data
