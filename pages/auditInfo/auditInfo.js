@@ -63,7 +63,7 @@ Page({
         console.log("调用白名单审核接口成功")
         console.log(res)
         my.reLaunch({
-          url: '/pages/auditInfo/auditInfo?parkNo=' + that.data.parkNo,
+          url: '/pages/auditInfo/auditInfo?parkNo=' + that.data.parkNo + '&parkId=' + that.data.parkId,
           success: function (res) {
             my.showToast({
               content: '审核成功',
