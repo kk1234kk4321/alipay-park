@@ -3,11 +3,13 @@ Page({
   data: {
     array: {},
     parkNo: '',
+    parkId:''
   },
   onLoad(res) {
     console.log("进入白名单审核页面===",res);
     this.setData({
-      parkNo:res.parkNo
+      parkNo:res.parkNo,
+      parkId:res.parkId
     })
     my.setNavigationBar({
       title: '白名单审核'
@@ -15,9 +17,10 @@ Page({
   },
   onShow() {
     var that = this
-    var parkNo = that.data.parkNo
+    var parkId = that.data.parkId
+
     my.httpRequest({
-      url: app.globalData.url + '/zfb/applyCarList/parkNo/' + parkNo+'/userid/'+app.globalData.userid,
+      url: app.globalData.url + '/zfb/applyCarList/parkId/' + parkId,
       method: 'GET',
       dataType: 'text',
       headers: { "content-type": 'application/x-www-form-urlencoded' },

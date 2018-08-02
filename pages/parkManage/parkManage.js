@@ -32,7 +32,7 @@ Page({
     console.log("准备进入停车场功能管理页面====",e.target.dataset);
     var parkNo = e.target.dataset.parkNo;
     my.navigateTo({
-      url: '/pages/parkOwnerManage/parkOwnerManage?parkNo='+e.target.dataset.parkNo
+      url: '/pages/parkOwnerManage/parkOwnerManage?parkNo='+e.target.dataset.parkNo+'&parkId='+e.target.dataset.parkId
     })
   }
 });

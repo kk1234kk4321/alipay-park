@@ -53,7 +53,8 @@
 .container-others {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 10px;
+  flex-wrap:wrap;
   /* margin-bottom: 40px; */
 }
 
@@ -63,11 +64,9 @@
 }
 
 .others {
-  width: 25%;
-  float: left;
-  text-align: left;
+  text-align: center;
   background: white;
-  margin-left:5px;
+  margin:0 5px;
 }
 
 /* .container-bottom {

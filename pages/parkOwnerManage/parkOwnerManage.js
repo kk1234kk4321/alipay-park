@@ -2,12 +2,14 @@ const app = getApp();
 Page({
   data: {
     parkNo:'',
+    parkId:'',
     array: {},
   },
   onLoad(res) {
     console.log("进入停车场功能管理页面===",res);
     this.setData({
       parkNo:res.parkNo,
+      parkId:res.parkId,
       authorty: app.globalData.authorty
     })
     my.setNavigationBar({
@@ -23,7 +25,7 @@ Page({
   doAudit(e){
     console.log("准备进入白名单审核页面===", this.data);
     my.navigateTo({
-      url: '/pages/auditInfo/auditInfo?parkNo=' + this.data.parkNo
+      url: '/pages/auditInfo/auditInfo?parkNo=' + this.data.parkNo+'&parkId='+this.data.parkId
     })
   },
   parking(e){
