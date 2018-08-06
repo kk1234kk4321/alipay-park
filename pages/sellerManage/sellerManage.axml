@@ -2,7 +2,7 @@
 <view a:if="{{array!=null&&array.length>0}}">
   <view class="container-item">
     <view class="item" a:for="{{array}}" a:for-index="idx" a:for-item="item">
-      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="sellerDiscount" data-park-no="{{item.parkNo}}">{{item.parkName}}</view>
+      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="searchCarNo" data-park-no="{{item.parkNo}}" data-park-name="{{item.parkName}}">{{item.parkName}}</view>
     </view>
   </view>
 </view>

@@ -33,11 +33,11 @@ Page({
       }
     })
   },
-  sellerDiscount(e) {
-    var plateNum = 'carNo';
-    console.log("准备进入商家管理页面===", e.target.dataset);
+  searchCarNo(e) {
+    var parkNo = e.target.dataset.parkNo
+    var parkName = e.target.dataset.parkName
     my.navigateTo({
-      url: '/pages/sellerDiscount/sellerDiscount?parkNo=' + e.target.dataset.parkNo + '&carNo=0&currCount=0&plateNum=' + plateNum
+      url: '/pages/searchCarNo/searchCarNo?parkNo=' + parkNo + '&parkName=' + parkName
     })
   }
 })
