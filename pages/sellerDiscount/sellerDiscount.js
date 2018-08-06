@@ -159,7 +159,7 @@ Page({
             remainDiscount: remainDiscount
           })
           console.log("进入优惠成功页面")
-          my.navigateTo({
+          my.redirectTo({
             url: '/pages/discountSuccess/discountSuccess?parkNo=' + parkNo + '&parkName=' + parkName + '&carNo=' + carNo,
           })
         }
