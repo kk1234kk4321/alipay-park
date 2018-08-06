@@ -13,7 +13,7 @@ Page({
     var that = this;
     var userid = app.globalData.userid;
     my.httpRequest({
-      url: app.globalData.url+'/zfb/parkOwnerList/userid/'+userid,
+      url: app.globalData.url+'/zfb/parkOwnerList/userid/'+userid+'/authorty/'+app.globalData.authorty,
       data: {},
       method: 'GET',
       dataType: 'text',
