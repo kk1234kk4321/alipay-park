@@ -34,8 +34,8 @@ Page({
     })
   },
   searchCarNo(e) {
-    var parkNo = e.target.dataset.parkNo
-    var parkName = e.target.dataset.parkName
+    var parkNo = e.currentTarget.dataset.parkNo
+    var parkName = e.currentTarget.dataset.parkName
     my.navigateTo({
       url: '/pages/searchCarNo/searchCarNo?parkNo=' + parkNo + '&parkName=' + parkName
     })
