@@ -21,7 +21,8 @@
     "pages/payFeeDetailForMember/payFeeDetailForMember",
     "pages/sellerManage/sellerManage",
     "pages/sellerDiscount/sellerDiscount",
-    "pages/discountSuccess/discountSuccess"
+    "pages/discountSuccess/discountSuccess",
+    "pages/searchCarNo/searchCarNo"
   ],
   "window": {
     "defaultTitle": "停车缴费",

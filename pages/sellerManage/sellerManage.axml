@@ -2,7 +2,10 @@
 <view a:if="{{array!=null&&array.length>0}}">
   <view class="container-item">
     <view class="item" a:for="{{array}}" a:for-index="idx" a:for-item="item">
-      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="sellerDiscount" data-park-no="{{item.parkNo}}">{{item.parkName}}</view>
+      <view style="color:#000;width:100%;" onTap="searchCarNo" data-park-no="{{item.parkNo}}" data-park-name="{{item.parkName}}">
+        <view class="item-left">{{item.parkName}}</view>
+        <view class="item-right">剩余<text style="font-size:18px;color:#F6912B;">{{item.remainDiscount}}</text>张优惠券</view>
+      </view>
     </view>
   </view>
 </view>

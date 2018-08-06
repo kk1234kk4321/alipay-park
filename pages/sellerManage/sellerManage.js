@@ -12,15 +12,15 @@ Page({
     var that = this
     var userid = app.globalData.userid
     my.httpRequest({
-      url: app.globalData.url + '/zfb/parkOwnerList/userid/' + userid,
+      url: app.globalData.url + '/zfb/seller/parkList/userid/' + userid,
       method: 'GET',
       data: {},
       header: {
         "content-type": 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log("调用车场管理接口成功")
-        console.log("array====>", res)
+        console.log("调用商家停车场管理接口成功")
+        console.log("parkList====>", res)
         if (res.data != '') {
           that.setData({
             array: res.data.data
@@ -33,11 +33,11 @@ Page({
       }
     })
   },
-  sellerDiscount(e) {
-    var plateNum = 'carNo';
-    console.log("准备进入商家管理页面===", e.target.dataset);
+  searchCarNo(e) {
+    var parkNo = e.currentTarget.dataset.parkNo
+    var parkName = e.currentTarget.dataset.parkName
     my.navigateTo({
-      url: '/pages/sellerDiscount/sellerDiscount?parkNo=' + e.target.dataset.parkNo + '&carNo=0&currCount=0&plateNum=' + plateNum
+      url: '/pages/searchCarNo/searchCarNo?parkNo=' + parkNo + '&parkName=' + parkName
     })
   }
 })
