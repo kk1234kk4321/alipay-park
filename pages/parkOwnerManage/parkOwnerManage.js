@@ -39,5 +39,11 @@ Page({
     my.navigateTo({
       url: '/pages/payFeeSum/payFeeSum?parkNo=' + this.data.parkNo
     })
+  },
+  cashPay:function(){
+    console.log("准备进入现金收费页面===", this.data);
+    my.navigateTo({
+      url: '/pages/cashPayment/cashPayment?parkNo=' + this.data.parkNo
+    })
   }
 });

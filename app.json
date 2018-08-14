@@ -22,7 +22,9 @@
     "pages/sellerManage/sellerManage",
     "pages/sellerDiscount/sellerDiscount",
     "pages/discountSuccess/discountSuccess",
-    "pages/searchCarNo/searchCarNo"
+    "pages/searchCarNo/searchCarNo",
+    "pages/cashPayment/cashPayment",
+    "pages/cashPaying/cashPaying"
   ],
   "window": {
     "defaultTitle": "停车缴费",
