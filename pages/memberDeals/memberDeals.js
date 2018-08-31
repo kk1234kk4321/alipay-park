@@ -164,8 +164,23 @@ Page({
           orderStr: res.data.data.orderStr,  // 即上述服务端已经加签的orderSr参数
           success: (res) => {
             var tradeNo = res.data.data.tradeno;
-            that.updateStatus(tradeNo,fee,carNo,parkNo,count,price)
+            if(res.resultCode == 9000) {
+              that.updateStatus(tradeNo,fee,carNo,parkNo,count,price);
+
+              my.showToast({
+                content: '支付成功',
+                type: 'success',
+                duration: 2000
+              })
+            }else if(res.resultCode == 4000) {
+              my.showToast({
+                content: '支付失败',
+                type: 'fail',
+                duration: 2000
+              })
+            }
           },
+          
         });
         
       },
@@ -184,27 +199,13 @@ Page({
         '/count/'+count+'/price/'+price,
       data: {},
       method: 'GET',
+      dataType: 'text',
       headers: { "content-type": 'application/x-www-form-urlencoded' },
       success: function (res) {
         console.log("调用更新支付状态接口成功", res)
-        my.reLaunch({
-          url: '/pages/index/index',
-          success: function (res) {
-            my.showToast({
-              content: '支付成功',
-              type: 'success',
-              duration: 2000
-            })
-          }
-        })
       },
       fail: function (res) {
         console.log("调用更新支付状态接口失败", res)
-        my.showToast({
-          content: '支付失败',
-          type: 'fail',
-          duration: 2000
-        })
       }
     }); 
   },
