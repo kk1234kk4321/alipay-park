@@ -24,7 +24,9 @@
     "pages/discountSuccess/discountSuccess",
     "pages/searchCarNo/searchCarNo",
     "pages/cashPayment/cashPayment",
-    "pages/cashPaying/cashPaying"
+    "pages/cashPaying/cashPaying",
+    "pages/staffManage/staffManage",
+    "pages/staffSearchNickname/staffSearchNickname"
   ],
   "window": {
     "defaultTitle": "停车缴费",
