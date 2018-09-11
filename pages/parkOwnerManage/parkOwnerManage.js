@@ -51,5 +51,11 @@ Page({
     my.navigateTo({
       url: '/pages/staffManage/staffManage?parkNo=' + this.data.parkNo
     })
+  },
+  sellerManage:function(){
+    console.log("准备进入商家管理页面===", this.data);
+    my.navigateTo({
+      url: '/pages/sellerSetManage/sellerSetManage?parkNo=' + this.data.parkNo
+    })
   }
 });
