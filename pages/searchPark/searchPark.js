@@ -11,7 +11,7 @@ Page({
 
   //生命周期函数--监听页面加载
   onLoad: function (res) {
-    if(res.plateNum=="carNo") {//车位预约
+    if (res.plateNum == "carNo") {//车位预约
       console.log("您要预约的车牌号：", res.plateNum);
     } else {//长期租位
       console.log("您要长期租位的车牌号：", res.plateNum);
@@ -22,27 +22,53 @@ Page({
   },
 
   //生命周期函数--监听页面显示
-  onShow() {   
+  onShow() {
     my.setNavigationBar({
       title: '停车场搜索'
     })
+    var that = this
+    var plateNum = that.data.plateNum
+    if (plateNum == '') {
+      plateNum = null;
+    }
+    my.httpRequest({
+      url:app.globalData.url + '/car/weixin/parkList/all/carNo/' + encodeURI(plateNum),
+      method: 'GET',
+      data: {},
+      header: {
+        "content-type": 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log("调用在停车辆列表接口成功")
+        console.log("plateNum====>", res)
+        if (res.data != '') {
+          that.setData({
+            parkList: res.data.data
+          })
+        } else {
+          that.setData({
+            parkList: ''
+          })
+        }
+      }
+    })
   },
-  
+
   //监听文本框输入
-  parkNameInput: function(e) {
+  parkNameInput: function (e) {
     var parkName = e.detail.value;
     this.setData({
       parkName: parkName
     })
   },
-  
+
   //停车场搜索功能
-  searchPark:function(e) {
+  searchPark: function (e) {
     var that = this
     var parkName = that.data.parkName
     var plateNum = that.data.plateNum
     console.log("车牌为", plateNum)
-    if(parkName==""||parkName==null) {//搜索内容为空
+    if (parkName == "" || parkName == null) {//搜索内容为空
       that.setData({
         parkList: ''
       })
@@ -85,7 +111,7 @@ Page({
   },
 
   //长期租位
-  memberDeals: function(e) {
+  memberDeals: function (e) {
     console.log("欢迎来到长期租位页面");
     var price = e.currentTarget.dataset.price;
     var carNo = e.currentTarget.dataset.carNo;

@@ -41,6 +41,33 @@ Page({
       },
     }); 
   },
+
+  unitMinuteInput: function (e) {
+    var unitMinute = e.detail.value;
+    console.log("unitMinute+++++>",unitMinute)
+    if (unitMinute.length == 0) {
+      my.showToast({
+        title: '单位时间不可为空！',
+        type: 'fail',
+        duration: 2000
+      })
+    } else if (unitMinute == 0) {
+      my.showToast({
+
+        title: '单位时间不可为0！',
+        type: 'fail',
+        duration: 2000
+      })
+
+    } else if (unitMinute < 0) {
+      my.showToast({
+        title: '单位时间不可小于0！',
+        type: 'fail',
+        duration: 2000
+      })
+
+    }
+    },
   
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e)
@@ -66,14 +93,50 @@ Page({
     if(feeMonth==''){
       feeMonth = 0;
     }
-    var unitMinute = data.unitMinute;
-    if (unitMinute == '') {
-      unitMinute = 1;
-    }
+
     var unitPrice = data.unitPrice;
     if (unitPrice == '') {
       unitPrice = 0;
     }
+    var unitMinute = data.unitMinute;
+    
+   if (unitMinute == "" || unitMinute == undefined || unitMinute < 0 || unitMinute == 0) {
+        if (unitMinute.length == 0) {
+      my.showToast({
+        content: '单位时间不可为空！',
+        type: 'fail',
+        duration: 2000
+      })
+      this.setData({
+        focus:true
+      })
+    } else if (unitMinute == 0||unitMinute=="0") {
+    
+      my.showToast({
+        content: '单位时间不可为0！',
+        type: 'fail',
+        duration: 2000
+      })
+      this.setData({
+        focus:true
+      })
+
+    } else if (unitMinute < 0) {
+       my.showToast({
+          content: '单位时间不可小于0！',
+          type: 'fail',
+          duration: 2000
+        })
+this.setData({
+        focus:true
+      })
+    }else{
+      this.setData({
+        focus:false
+      })
+    }
+    }else{
+    
     my.httpRequest({
       url: app.globalData.url + '/park/updatePark/id/' + id + '/startMinute/' + startMinute + '/startPrice/' + startPrice + '/feeTop/' + feeTop + '/freeMinute/' + freeMinute + '/feeMonth/' + feeMonth + '/unitMinute/' + unitMinute +'/unitPrice/'+unitPrice,
       method: 'GET',
@@ -105,5 +168,6 @@ Page({
       }
     })
 
+  }
   },
 });

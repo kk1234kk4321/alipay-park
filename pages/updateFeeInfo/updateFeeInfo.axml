@@ -45,14 +45,14 @@
           <view style="width:10%;padding-left:5%;">每</view>
           <view style="width:25%;">
             <view class="inputView">
-              <input class="input" name="unitMinute" maxlength="10" value="{{array.unitMinute}}" />
+              <input class="input" name="unitMinute" onTap="unitMinuteInput" maxlength="10" value="{{array.unitMinute}}" />
             </view>
           </view>
           <view style="width:20%;">分钟，</view>
           <view>收</view>
           <view style="width:25%;">
             <view class="inputView">
-              <input class="input" name="unitPrice" maxlength="10" value="{{array.unitPrice}}" />
+              <input class="input" name="unitPrice" maxlength="10"  value="{{array.unitPrice}}" />
             </view>
           </view>
           <view style="width:20%;">元。</view>

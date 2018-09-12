@@ -107,3 +107,15 @@ input {
     border: 2rpx solid #ddd;  
     margin: 5rpx;
 }
+
+.container-other{
+  background-color:white;
+  display: flex;
+  flex-direction: row;
+  position:fixed; 
+  bottom:0px;  
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px #BEE6F2 solid;
+}

@@ -218,5 +218,9 @@ Page({
     my.setNavigationBar({
      title:'车牌号绑定'
     });
+  },
+   //返回
+  reback(e){
+    my.reLaunch({url: '/pages/index/index'})
   }
 })
