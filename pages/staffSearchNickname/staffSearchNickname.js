@@ -8,6 +8,7 @@ Page({
   data: {
     nickname: '',
     parkNo: '',
+    parkId: '',
     staff: {}
   },
 
@@ -17,7 +18,8 @@ Page({
   onLoad: function (res) {
     this.setData({
       nickname: res.nickname,
-      parkNo: res.parkNo
+      parkNo: res.parkNo,
+      parkId: res.parkId
     })
   },
 
@@ -117,7 +119,7 @@ Page({
 
         if(that.data.staff.message == '') {
           my.redirectTo({
-            url: '/pages/staffManage/staffManage?parkNo=' + parkNo,
+            url: '/pages/staffManage/staffManage?parkNo=' + parkNo + '&parkId=' + parkId,
           })
         }
       }
@@ -129,8 +131,9 @@ Page({
    */
   returnBtn: function (e) {
     var parkNo = this.data.parkNo
+    var parkId = this.data.parkId
     my.redirectTo({
-      url: '/pages/staffManage/staffManage?parkNo=' + parkNo,
+      url: '/pages/staffManage/staffManage?parkNo=' + parkNo + '&parkId=' + parkId
     })
   }
 

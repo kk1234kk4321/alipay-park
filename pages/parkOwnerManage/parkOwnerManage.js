@@ -49,7 +49,7 @@ Page({
   staffManage:function(){
     console.log("准备进入员工管理页面===", this.data);
     my.navigateTo({
-      url: '/pages/staffManage/staffManage?parkNo=' + this.data.parkNo
+      url: '/pages/staffManage/staffManage?parkNo=' + this.data.parkNo + '&parkId=' + this.data.parkId
     })
   },
   sellerManage:function(){

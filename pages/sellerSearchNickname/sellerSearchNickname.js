@@ -33,7 +33,7 @@ Page({
 
     console.log("nickname=", nickname)
     console.log("parkNo=", parkNo)
-    console.log("userid", userid)
+    console.log("userid=", userid)
     if (nickname == '') {
       nickname = 'null'
     }
@@ -65,18 +65,6 @@ Page({
       nickname: nickname
     })
   },
-  remainDiscountInput: function(e) {
-    var remainDiscount = e.detail.value
-    this.setData({
-      remainDiscount: remainDiscount
-    })
-  },
-  minutesInput: function(e) {
-    var minutes = e.detail.value
-    this.setData({
-      minutes: minutes
-    })
-  },
 
   /**
    * 搜索昵称
@@ -91,33 +79,71 @@ Page({
 
     console.log("昵称：", nickname)
     console.log("parkNo:", parkNo)
-    console.log("userid", userid)
+    console.log("userid:", userid)
     that.onShow();
   },
 
   /**
    * 增加员工
    */
-  addSeller: function (e) {
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e)
     var that = this
-    var parkId = e.currentTarget.dataset.parkId
     var parkNo = that.data.parkNo
-    var nickname = e.currentTarget.dataset.nickname
     var type = 2 //2:支付宝注册
-    var remainDiscount = that.data.remainDiscount
-    var minutes = that.data.minutes
-    if (remainDiscount == undefined) {
-      console.log("哈哈哈")
-      var remainDiscount = e.currentTarget.dataset.remainDiscount
-    }
-    if (minutes == undefined) {
-      var minutes = e.currentTarget.dataset.minutes
-    }
+    var data = e.detail.value
+    var parkId = data.parkId
+    var nickname = data.nickname
+    var remainDiscount = data.remainDiscount
+    var minutes = data.minutes
     console.log("parkId=", parkId)
     console.log("nickname=", nickname)
     console.log("剩余优惠券：", remainDiscount)
     console.log("抵扣时间：", minutes)
-
+    if(remainDiscount == "" || remainDiscount == undefined || remainDiscount < 0 || remainDiscount == 0) {
+      if(remainDiscount.length == 0) {
+        my.showToast({
+          content: '剩余优惠券数量不可为空！',
+          icon: 'none',
+          duration: 2000
+        })
+      } else if(remainDiscount == 0) {
+        my.showToast({
+          content: '剩余优惠券数量不可为0！',
+          icon: 'none',
+          duration: 2000
+        })
+      } else if(remainDiscount < 0) {
+        my.showToast({
+          content: '剩余优惠券数量不可小于0！',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+      return;
+    } 
+    if(minutes == "" || minutes == undefined || minutes < 0 || minutes == 0) {
+      if (minutes.length == 0) {
+        my.showToast({
+          content: '抵扣时间不可为空！',
+          icon: 'none',
+          duration: 2000
+        })
+      } else if (minutes == 0) {
+        my.showToast({
+          content: '抵扣时间不可为0！',
+          icon: 'none',
+          duration: 2000
+        })
+      } else if (minutes < 0) {
+        my.showToast({
+          content: '抵扣时间不可小于0！',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+      return;
+    }
     my.httpRequest({
       url: app.globalData.url + '/car/weixin/addSeller/nickname/' + encodeURI(nickname) + '/parkId/' + parkId + '/type/' + type + '/remainDiscount/' + remainDiscount + '/minutes/' + minutes,
       method: 'GET',
@@ -144,6 +170,6 @@ Page({
           })
         }
       }
-    })
+    })   
   }
 })
