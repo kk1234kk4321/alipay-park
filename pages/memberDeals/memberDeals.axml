@@ -3,7 +3,7 @@
     <view class="" style="width:40%;padding-left:30px;color:#716F6A;">{{carNo}}</view>
     <view class="" style="width:60%;text-align:right;padding-right:30px;font-size:17px;">{{applyCar.parkName}}</view>
 </view>
-
+<view a:if="{{applyCar.feeMonth!=0}}">
 <view class="external">外部用户</view>
 
 <view style="padding-top:6px;padding-left:30px;padding-right:30px;color:#686661;font-size:14px;">
@@ -34,7 +34,7 @@
         <view style="margin-top:8px;">截止时间：{{carMember.endTime}}</view>
     </view>
 </view>
-
+</view>
 <view class="container-applyCar">
     <view style="width:60%;float:left;"><view style="padding-left:30px;">内部用户</view></view>
     <view class="applyCar" data-price="{{price}}" data-car-no="{{carNo}}" data-park-no="{{parkNo}}" a:if="{{applyCar.status=='1'}}">
@@ -51,7 +51,7 @@
     </view>
 </view>
 
-<view class="container-button">
+<view class="container-button" a:if="{{applyCar.feeMonth!=0}}">
     <view class='item' style="width:70%;float:left;margin:0px;padding:0px;">
         <view style="padding-left:30px;">合计：</view>
         <view style="text-align:left;color:#FF972E;font-size:20px;margin-right:4px;">¥</view>
