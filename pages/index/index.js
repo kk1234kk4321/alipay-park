@@ -3,7 +3,8 @@ const app = getApp();
 Page({
   data: {
     array: {},
-    authorty:app.globalData.authorty
+    authorty:app.globalData.authorty,
+    unpaiedcode:0
   },
   onLoad() {
     console.log("app.globalData.userid===>",app.globalData.userid)
@@ -57,7 +58,9 @@ Page({
 
         that.setData({
           array: res.data.list,
+          unpaiedcode: res.data.unpaiedcode,
           authorty: app.globalData.authorty
+
         })
       }
     })
@@ -119,6 +122,13 @@ Page({
     console.log('当前车牌号为', carNo);
     my.navigateTo({
       url: '/pages/payFeets/payFeets?carNo=' + carNo
+    })
+  },
+  unpaiedeno(e){
+  var that = this;
+    console.log('当前用户id',app.globalData.userid)
+    my.navigateTo({
+      url:'/pages/unpaiedeno/unpaiedeno?userid='+app.globalData.userid
     })
   },
   //商家管理

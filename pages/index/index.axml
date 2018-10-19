@@ -11,6 +11,12 @@
   <view class="container-add" onTap="addCarNo">
     <view class="iconfont icon-jia" style="margin:0 auto;color:#4CBFE0;font-size:24px;text-align:right;"></view>
   </view>
+  
+   <view a:if="{{unpaiedcode != 0}}">
+    <view class="container-add">
+      <view style="font-size:16px;color:#000;text-align:center;width:100%;" onTap="unpaiedeno">待支付订单</view>
+    </view>
+  </view>
   <!-- <view style="text-align:right;padding-right:20px;color:#807D78;">添加新车牌</view> -->
   <view class="container-others" style="padding-bottom:60px;">
      <view class="others"><image src="../../img/cwyy.png" onTap="searchPark"></image></view> 
